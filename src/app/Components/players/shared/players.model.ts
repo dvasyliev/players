@@ -6,7 +6,8 @@ export class Player {
                 public dateOfBirth: string,
                 public nationality: string,
                 public contractUntil: string,
-                public marketValue: number) {
+                public marketValue: number,
+                public hidden: boolean) {
 
     }
 }

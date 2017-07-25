@@ -1,16 +1,18 @@
 import {EventEmitter, Injectable} from '@angular/core';
-import {Http} from '@angular/http';
+import {Headers, Http} from '@angular/http';
 import {Observable} from 'rxjs/Observable';
 import {Player} from './players.model';
 
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
+import 'rxjs/add/operator/toPromise';
 
 @Injectable()
 export class PlayersService {
     request$: EventEmitter<any>;
 
     private playersUrl = '../assets/json/players.json';
+    private headers = new Headers({'Content-Type': 'application/json'});
 
     private HandleError(error: any): Promise<any> {
         this.request$.emit('finished');
@@ -26,7 +28,10 @@ export class PlayersService {
         return this.http.get(this.playersUrl)
             .map(response => {
                 this.request$.emit('finished');
-                return response.json() as Player[];
+                return response.json().map((obj) => {
+                    obj.hidden = false;
+                    return obj;
+                }) as Player[];
             })
             .catch(this.HandleError);
     }

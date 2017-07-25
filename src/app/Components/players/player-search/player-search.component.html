@@ -1,0 +1,35 @@
+<div class="player-search">
+    <form class="player-search__form">
+        <input class="player-search__input"
+               type="search"
+               placeholder="Поиск" [formControl]="playerFormControl">
+    </form>
+</div>
+
+<div class="player__list">
+    <div class="player-list__item" *ngFor="let player of players">
+        <div class="player-list__item player-detail" *ngIf="player.hidden === false">
+            <h2 class="player-detail__name">{{ player.name }}</h2>
+            <ul class="player-detail__parameters">
+                <li class="player-detail__parameter">
+                    <span>Position:</span> {{ player.position }}
+                </li>
+                <li class="player-detail__parameter">
+                    <span>Jersey number:</span> {{ player.jerseyNumber }}
+                </li>
+                <li class="player-detail__parameter">
+                    <span>Date of birth:</span> {{ player.dateOfBirth }}
+                </li>
+                <li class="player-detail__parameter">
+                    <span>Nationality:</span> {{ player.nationality }}
+                </li>
+                <li class="player-detail__parameter">
+                    <span>Contract until:</span> {{ player.contractUntil }}
+                </li>
+                <li class="player-detail__parameter">
+                    <span>Market value:</span> {{ player.marketValue }}
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
