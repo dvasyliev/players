@@ -7,7 +7,7 @@
     "dateOfBirth": "1994-07-02",
     "nationality": "Ghana",
     "contractUntil": "2020-06-30",
-    "marketValue": "10,000,000 �"
+    "marketValue": "$10,000,000"
   },
   {
     "id": 435,
@@ -17,7 +17,7 @@
     "dateOfBirth": "1986-02-10",
     "nationality": "Colombia",
     "contractUntil": "2016-06-30",
-    "marketValue": "35,000,000 �"
+    "marketValue": "$35,000,000"
   },
   {
     "id": 1840,
@@ -27,7 +27,7 @@
     "dateOfBirth": "1987-06-20",
     "nationality": "Bosnia-Herzegovina",
     "contractUntil": "2019-06-30",
-    "marketValue": "12,000,000 �"
+    "marketValue": "$12,000,000"
   },
   {
     "id": 2138,
@@ -37,7 +37,7 @@
     "dateOfBirth": "1992-05-11",
     "nationality": "Belgium",
     "contractUntil": "2019-06-30",
-    "marketValue": "35,000,000 �"
+    "marketValue": "$35,000,000"
   },
   {
     "id": 2140,
@@ -47,7 +47,7 @@
     "dateOfBirth": "1993-10-27",
     "nationality": "England",
     "contractUntil": "2019-06-30",
-    "marketValue": "250,000 �"
+    "marketValue": "$250,000"
   },
   {
     "id": 2141,
@@ -57,7 +57,7 @@
     "dateOfBirth": "1985-12-19",
     "nationality": "England",
     "contractUntil": "2017-06-30",
-    "marketValue": "20,000,000 �"
+    "marketValue": "$20,000,000"
   },
   {
     "id": 2142,
@@ -67,7 +67,7 @@
     "dateOfBirth": "1994-10-27",
     "nationality": "France",
     "contractUntil": "2019-06-30",
-    "marketValue": "12,000,000 �"
+    "marketValue": "$12,000,000"
   },
   {
     "id": 2143,
@@ -77,7 +77,7 @@
     "dateOfBirth": "1980-12-07",
     "nationality": "England",
     "contractUntil": "2016-06-30",
-    "marketValue": "4,000,000 �"
+    "marketValue": "$4,000,000"
   },
   {
     "id": 2145,
@@ -87,7 +87,7 @@
     "dateOfBirth": "1989-08-28",
     "nationality": "Spain",
     "contractUntil": "2019-06-30",
-    "marketValue": "23,000,000 �"
+    "marketValue": "$23,000,000"
   },
   {
     "id": 2147,
@@ -97,7 +97,7 @@
     "dateOfBirth": "1984-02-22",
     "nationality": "Serbia",
     "contractUntil": "2016-06-30",
-    "marketValue": "17,000,000 �"
+    "marketValue": "$17,000,000"
   },
   {
     "id": 2148,
@@ -107,7 +107,7 @@
     "dateOfBirth": "1988-08-01",
     "nationality": "Serbia",
     "contractUntil": "2019-06-30",
-    "marketValue": "40,000,000 �"
+    "marketValue": "$40,000,000"
   },
   {
     "id": 2149,
@@ -117,7 +117,7 @@
     "dateOfBirth": "1987-04-22",
     "nationality": "Nigeria",
     "contractUntil": "2017-06-30",
-    "marketValue": "10,000,000 �"
+    "marketValue": "$10,000,000"
   },
   {
     "id": 2151,
@@ -127,7 +127,7 @@
     "dateOfBirth": "1987-05-04",
     "nationality": "Spain",
     "contractUntil": "2019-06-30",
-    "marketValue": "50,000,000 �"
+    "marketValue": "$50,000,000"
   },
   {
     "id": 2152,
@@ -137,7 +137,7 @@
     "dateOfBirth": "1987-03-24",
     "nationality": "Brazil",
     "contractUntil": "2017-06-30",
-    "marketValue": "25,000,000 �"
+    "marketValue": "$25,000,000"
   },
   {
     "id": 2153,
@@ -147,7 +147,7 @@
     "dateOfBirth": "1991-09-09",
     "nationality": "Brazil",
     "contractUntil": "2019-06-30",
-    "marketValue": "38,000,000 �"
+    "marketValue": "$38,000,000"
   },
   {
     "id": 2154,
@@ -157,7 +157,7 @@
     "dateOfBirth": "1988-08-09",
     "nationality": "Brazil",
     "contractUntil": "2018-06-30",
-    "marketValue": "30,000,000 �"
+    "marketValue": "$30,000,000"
   },
   {
     "id": 2155,
@@ -167,7 +167,7 @@
     "dateOfBirth": "1991-01-07",
     "nationality": "Belgium",
     "contractUntil": "2020-06-30",
-    "marketValue": "70,000,000 �"
+    "marketValue": "$70,000,000"
   },
   {
     "id": 2158,
@@ -177,7 +177,7 @@
     "dateOfBirth": "1988-10-07",
     "nationality": "Spain",
     "contractUntil": "2019-06-30",
-    "marketValue": "50,000,000 �"
+    "marketValue": "$50,000,000"
   },
   {
     "id": 2159,
@@ -187,7 +187,7 @@
     "dateOfBirth": "1987-01-02",
     "nationality": "France",
     "contractUntil": "2018-06-30",
-    "marketValue": "12,000,000 �"
+    "marketValue": "$12,000,000"
   },
   {
     "id": 2655,
@@ -197,7 +197,7 @@
     "dateOfBirth": "1988-12-01",
     "nationality": "Senegal",
     "contractUntil": "2019-06-30",
-    "marketValue": "6,500,000 �"
+    "marketValue": "$6,500,000"
   },
   {
     "id": 3428,
@@ -207,7 +207,7 @@
     "dateOfBirth": "1987-07-28",
     "nationality": "Spain",
     "contractUntil": "2019-06-30",
-    "marketValue": "20,000,000 �"
+    "marketValue": "$20,000,000"
   },
   {
     "id": 3641,
@@ -217,7 +217,7 @@
     "dateOfBirth": "1996-01-23",
     "nationality": "England",
     "contractUntil": "2017-06-30",
-    "marketValue": "2,000,000 �"
+    "marketValue": "$2,000,000"
   },
   {
     "id": 5663,
@@ -227,7 +227,7 @@
     "dateOfBirth": "1996-02-08",
     "nationality": "Brazil",
     "contractUntil": "2020-06-30",
-    "marketValue": "6,000,000 �"
+    "marketValue": "$6,000,000"
   },
   {
     "id": 5664,
@@ -237,6 +237,6 @@
     "dateOfBirth": "1995-09-06",
     "nationality": "Burkina Faso",
     "contractUntil": "2018-06-30",
-    "marketValue": "4,000,000 �"
+    "marketValue": "$4,000,000"
   }
 ]
