@@ -11,7 +11,7 @@ import 'rxjs/add/operator/toPromise';
 export class PlayersService {
     request$: EventEmitter<any>;
 
-    private playersUrl = '../assets/json/players.json';
+    private playersUrl = 'assets/json/players.json';
     private headers = new Headers({'Content-Type': 'application/json'});
 
     private HandleError(error: any): Promise<any> {
@@ -29,7 +29,7 @@ export class PlayersService {
             .map(response => {
                 this.request$.emit('finished');
                 return response.json().map((obj) => {
-                    obj.hidden = false;
+                    obj.hidden = true;
                     return obj;
                 }) as Player[];
             })

@@ -34,4 +34,29 @@
         flex: 0 0 auto;
         height: 78px;
     }
+
+    &__developer,
+    &__copyright {
+        display: inline-block;
+        margin: 0 auto;
+        color: #fcfcfc;
+
+        a {
+            color: #bcbcbc;
+
+            &:hover {
+                color: #fcfcfc;
+            }
+        }
+    }
+
+    &__developer {
+        line-height: 60px;
+        font-size: 20px;
+    }
+
+    &__copyright {
+        line-height: 78px;
+        font-size: 14px;
+    }
 }
