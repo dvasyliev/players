@@ -158,7 +158,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var PlayersService = (function () {
     function PlayersService(http) {
         this.http = http;
-        this.playersUrl = 'assets/json/players.json';
+        this.playersUrl = '../assets/json/players.json';
         this.headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Headers */]({ 'Content-Type': 'application/json' });
         this.request$ = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["r" /* EventEmitter */]();
     }
@@ -173,7 +173,7 @@ var PlayersService = (function () {
             .map(function (response) {
             _this.request$.emit('finished');
             return response.json().map(function (obj) {
-                obj.hidden = false;
+                obj.hidden = true;
                 return obj;
             });
         })
