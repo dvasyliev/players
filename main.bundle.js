@@ -16,7 +16,7 @@ webpackEmptyContext.id = "../../../../../src async recursive";
 /***/ "../../../../../src/app/Components/players/player-search/player-search.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"player-search\">\n    <form class=\"player-search__form\">\n        <input class=\"player-search__input\"\n               type=\"search\"\n               placeholder=\"Поиск\" [formControl]=\"playerFormControl\">\n    </form>\n</div>\n\n<div class=\"player__list\">\n    <div class=\"player-list__item\" *ngFor=\"let player of players\">\n        <div class=\"player-list__item player-detail\" *ngIf=\"player.hidden === false\">\n            <h2 class=\"player-detail__name\">{{ player.name }}</h2>\n            <ul class=\"player-detail__parameters\">\n                <li class=\"player-detail__parameter\">\n                    <span>Position:</span> {{ player.position }}\n                </li>\n                <li class=\"player-detail__parameter\">\n                    <span>Jersey number:</span> {{ player.jerseyNumber }}\n                </li>\n                <li class=\"player-detail__parameter\">\n                    <span>Date of birth:</span> {{ player.dateOfBirth }}\n                </li>\n                <li class=\"player-detail__parameter\">\n                    <span>Nationality:</span> {{ player.nationality }}\n                </li>\n                <li class=\"player-detail__parameter\">\n                    <span>Contract until:</span> {{ player.contractUntil }}\n                </li>\n                <li class=\"player-detail__parameter\">\n                    <span>Market value:</span> {{ player.marketValue }}\n                </li>\n            </ul>\n        </div>\n    </div>\n</div>"
+module.exports = "<div class=\"player-search\">\n    <form class=\"player-search__form\">\n        <input class=\"player-search__input\"\n               type=\"search\"\n               placeholder=\"Enter name / position / nationality\" [formControl]=\"playerFormControl\">\n    </form>\n</div>\n\n<div class=\"player__list\">\n    <div class=\"player-list__item\" *ngFor=\"let player of players\">\n        <div class=\"player-list__item player-detail\" *ngIf=\"player.hidden === false\">\n            <h2 class=\"player-detail__name\">{{ player.name }}</h2>\n            <ul class=\"player-detail__parameters\">\n                <li class=\"player-detail__parameter\">\n                    <span>Position:</span> {{ player.position }}\n                </li>\n                <li class=\"player-detail__parameter\">\n                    <span>Jersey number:</span> {{ player.jerseyNumber }}\n                </li>\n                <li class=\"player-detail__parameter\">\n                    <span>Date of birth:</span> {{ player.dateOfBirth }}\n                </li>\n                <br>\n                <li class=\"player-detail__parameter\">\n                    <span>Nationality:</span> {{ player.nationality }}\n                </li>\n                <li class=\"player-detail__parameter\">\n                    <span>Contract until:</span> {{ player.contractUntil }}\n                </li>\n                <li class=\"player-detail__parameter\">\n                    <span>Market value:</span> {{ player.marketValue }}\n                </li>\n            </ul>\n        </div>\n    </div>\n</div>"
 
 /***/ }),
 
@@ -28,7 +28,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, ".player-search {\n  margin-bottom: 45px; }\n  .player-search__input {\n    display: block;\n    width: 100%;\n    max-width: 450px;\n    margin: 0 auto;\n    padding: 6px 8px;\n    background-color: #f2f2f2;\n    border-radius: 5px; }\n    .player-search__input:focus {\n      border: 2px solid #5297a9; }\n\n.player-list__item:not(:last-child) {\n  margin-bottom: 10px; }\n\n.player-detail {\n  display: block;\n  padding: 15px 25px;\n  border: 1px solid #b4b4b4; }\n  .player-detail__name {\n    margin: 0 0 5px;\n    font-size: 16px;\n    color: #5a5e6c; }\n  .player-detail__parameters {\n    font-size: 14px;\n    color: #b4b4b4; }\n  .player-detail__parameter {\n    display: inline-block; }\n    .player-detail__parameter:not(:last-child)::after {\n      content: ' | '; }\n    .player-detail__parameter span {\n      font-weight: 600; }\n", ""]);
+exports.push([module.i, ".player-search {\n  margin-bottom: 45px; }\n  .player-search__input {\n    display: block;\n    width: 100%;\n    max-width: 450px;\n    margin: 0 auto;\n    padding: 6px 8px;\n    background-color: #f2f2f2;\n    border-radius: 5px; }\n    .player-search__input:focus {\n      border: 2px solid #5297a9; }\n\n.player-list__item:not(:last-child) {\n  height: 100%;\n  transition: all ease 1s;\n  margin-bottom: 10px; }\n\n.player-list__item:empty {\n  display: none; }\n\n.player-detail {\n  display: block;\n  padding: 15px 45px;\n  border: 1px solid #b4b4b4;\n  border-radius: 5px; }\n  .player-detail__name {\n    margin: 0 0 5px;\n    font-size: 16px;\n    color: #5a5e6c; }\n  .player-detail__parameters {\n    font-size: 14px;\n    color: #b4b4b4; }\n  .player-detail__parameter {\n    display: inline-block; }\n    .player-detail__parameter:not(:last-child)::after {\n      content: ' | '; }\n    .player-detail__parameter span {\n      font-weight: 600; }\n", ""]);
 
 // exports
 
@@ -90,8 +90,8 @@ var PlayerSearchComponent = (function () {
                 /*  Checking of the occurrence of the parameter to string with object values */
                 var isCompare = keys.toLowerCase().indexOf(param.toLowerCase()) >= 0;
                 /*  Returning 'false' if (is exception and parameter is included
-                    in the string with object values) or (is not exception and parameter
-                    is included in the string with object values), else returning 'true' */
+                 in the string with object values) or (is not exception and parameter
+                 is included in the string with object values), else returning 'true' */
                 return isCompare && isException || !isCompare && !isException ? true : false;
                 /*  Returning 'false' if at least one value in array is false */
             }).indexOf(true) >= 0 ? true : false;
@@ -105,9 +105,13 @@ var PlayerSearchComponent = (function () {
     /*  Converting object to string with spaces between values */
     PlayerSearchComponent.prototype.convertObjectToArray = function (obj) {
         var keys = '';
+        var allowedParams = ['name', 'position', 'nationality'];
         for (var _i = 0, _a = Object.keys(obj); _i < _a.length; _i++) {
             var key = _a[_i];
-            keys += ' ' + obj[key];
+            /* Enable filtering if param included to allowedParams  */
+            if (allowedParams.indexOf(key) >= 0) {
+                keys += ' ' + obj[key];
+            }
         }
         return keys;
     };
@@ -194,7 +198,7 @@ var _a;
 /***/ "../../../../../src/app/app.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"skeleton\">\n    <div class=\"skeleton__header\"></div>\n    <div class=\"skeleton__body\">\n        <div class=\"skeleton__content\">\n            <app-player-search></app-player-search>\n        </div>\n    </div>\n    <div class=\"skeleton__footer\"></div>\n</div>"
+module.exports = "<div class=\"skeleton\">\n    <div class=\"skeleton__header\">\n        <div class=\"skeleton__developer\">Football players search</div>\n    </div>\n    <div class=\"skeleton__body\">\n        <div class=\"skeleton__content\">\n            <app-player-search></app-player-search>\n        </div>\n    </div>\n    <div class=\"skeleton__footer\">\n        <div class=\"skeleton__copyright\">developed by <a href=\"https://github.com/dvasyliev\">Dmitry Vasyliev</a></div>\n    </div>\n</div>"
 
 /***/ }),
 
@@ -206,7 +210,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, ".skeleton {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  width: 100%;\n  min-width: 320px;\n  min-height: 100%; }\n  .skeleton__header, .skeleton__footer {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    width: 100%;\n    background-color: #434753; }\n  .skeleton__header {\n    -webkit-box-flex: 0;\n        -ms-flex: 0 0 auto;\n            flex: 0 0 auto;\n    height: 60px;\n    border-bottom: 3px solid #2f323b; }\n  .skeleton__body {\n    -webkit-box-flex: 1;\n        -ms-flex: 1 0 auto;\n            flex: 1 0 auto;\n    width: 100%; }\n  .skeleton__content {\n    width: 100%;\n    max-width: 900px;\n    margin: 0 auto;\n    padding: 45px 25px; }\n  .skeleton__footer {\n    -webkit-box-flex: 0;\n        -ms-flex: 0 0 auto;\n            flex: 0 0 auto;\n    height: 78px; }\n", ""]);
+exports.push([module.i, ".skeleton {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n      -ms-flex-direction: column;\n          flex-direction: column;\n  width: 100%;\n  min-width: 320px;\n  min-height: 100%; }\n  .skeleton__header, .skeleton__footer {\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    width: 100%;\n    background-color: #434753; }\n  .skeleton__header {\n    -webkit-box-flex: 0;\n        -ms-flex: 0 0 auto;\n            flex: 0 0 auto;\n    height: 60px;\n    border-bottom: 3px solid #2f323b; }\n  .skeleton__body {\n    -webkit-box-flex: 1;\n        -ms-flex: 1 0 auto;\n            flex: 1 0 auto;\n    width: 100%; }\n  .skeleton__content {\n    width: 100%;\n    max-width: 900px;\n    margin: 0 auto;\n    padding: 45px 25px; }\n  .skeleton__footer {\n    -webkit-box-flex: 0;\n        -ms-flex: 0 0 auto;\n            flex: 0 0 auto;\n    height: 78px; }\n  .skeleton__developer, .skeleton__copyright {\n    display: inline-block;\n    margin: 0 auto;\n    color: #fcfcfc; }\n    .skeleton__developer a, .skeleton__copyright a {\n      color: #bcbcbc; }\n      .skeleton__developer a:hover, .skeleton__copyright a:hover {\n        color: #fcfcfc; }\n  .skeleton__developer {\n    line-height: 60px;\n    font-size: 20px; }\n  .skeleton__copyright {\n    line-height: 78px;\n    font-size: 14px; }\n", ""]);
 
 // exports
 
