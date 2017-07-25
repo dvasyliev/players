@@ -37,16 +37,17 @@ export class PlayerSearchComponent {
             /*  Splitting search string with parameters and comparing each parameter in loop
                 and creating array with 'false' or 'true' values for each parameter */
             const isHidden = value.split(' ').map(param => {
-                /*  Checking each parameter on existing exception */
-                const isException = param.indexOf('-') === 0;
-                /*  Removing '-' symbol if exceptions exist */
-                param = isException ? param.slice(1) : param;
-                /*  Checking of the occurrence of the parameter to string with object values */
-                const isCompare = keys.toLowerCase().indexOf(param.toLowerCase()) >= 0;
-                /*  Returning 'false' if (is exception and parameter is included
-                    in the string with object values) or (is not exception and parameter
-                    is included in the string with object values), else returning 'true' */
-                return isCompare && isException || !isCompare && !isException ? true : false;
+
+                    /*  Checking each parameter on existing exception */
+                    const isException = param.indexOf('-') === 0;
+                    /*  Removing '-' symbol if exceptions exist */
+                    param = isException ? param.slice(1) : param;
+                    /*  Checking of the occurrence of the parameter to string with object values */
+                    const isCompare = keys.toLowerCase().indexOf(param.toLowerCase()) >= 0;
+                    /*  Returning 'false' if (is exception and parameter is included
+                     in the string with object values) or (is not exception and parameter
+                     is included in the string with object values), else returning 'true' */
+                    return isCompare && isException || !isCompare && !isException ? true : false;
                 /*  Returning 'false' if at least one value in array is false */
             }).indexOf(true) >= 0 ? true : false;
             player['hidden'] = isHidden;
@@ -61,7 +62,13 @@ export class PlayerSearchComponent {
     /*  Converting object to string with spaces between values */
     convertObjectToArray(obj: object) {
         let keys = '';
-        for (const key of Object.keys(obj)) { keys += ' ' + obj[key]; }
+        const allowedParams = ['name', 'position', 'nationality'];
+        for (const key of Object.keys(obj)) {
+            /* Enable filtering if param included to allowedParams  */
+            if (allowedParams.indexOf(key) >= 0) {
+                keys += ' ' + obj[key];
+            }
+        }
         return keys;
     }
 }
